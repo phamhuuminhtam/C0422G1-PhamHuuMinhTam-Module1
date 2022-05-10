@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyển đổi tiền tệ</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Amount</td>
+        <td>Forn Currency</td>
+        <td>To Currency</td>
+    </tr>
+    <tr>
+        <Td><input type="number" id="nhapdulieu"></Td>
+        <Td><select id="From1">
+            <option value="VN">VietNam</option>
+            <option value="USD">USD</option>
+        </select></Td>
+        <Td><select id="To1">
+            <option value="USD">USD</option>
+            <option value="VN">VietNam</option>
+        </select>  </Td>
+        <td><button type="button"  onclick="chuyen()" style="background-color: mediumpurple; color: white" >Convert</button></td>
+    </tr>
+
+</table>
+<p style="color: blue">Result <Span id="result"></Span></p>
+<script>
+    function chuyen() {
+        var x=document.getElementById("nhapdulieu").value;
+        var f=document.getElementById("From1").value;
+        var t=document.getElementById("To1").value;
+        var R;
+        if (f=="VN" && t =="USD") {
+            R=parseInt(x)/23000 + "$";
+        }
+        else if (f=="VN" && t =="VN") {
+            R=parseInt(x) +"VND";
+        }
+        else if (f=="USD" && t =="USD") {
+            R=parseInt(x) + "$";
+        }
+        else if (f=="USD" && t =="VN") {
+            R=parseInt(x)*23000  +"VND";
+        }
+        document.getElementById("result").innerHTML= R;
+        }
+
+</script>
+</body>
+</html>

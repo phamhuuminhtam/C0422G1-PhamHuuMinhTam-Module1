@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biến, kiểu dữ liệu, toán tử</title>
+</head>
+<body>
+<label>Nhập điểm lý <input type="text" id="ly"></label>
+<label>Nhập điểm Hóa <input type="text" id="hoa"></label>
+<label>Nhập điểm Sinh <input type="text" id="sinh"></label><br>
+
+<label>Điểm trung bình: <p id="diemtrungbinh">0</p></label>
+
+<label>Tổng là:<p id="tong">0</p></label>
+<button type="button" onclick="tinhtoan()">Tính toán</button><hr/>
+
+
+<label for="doC">Nhập độ c  <input type="number" id="doC"></label><br>
+
+<p> Độ F là: <span id="doF">0</span></p><br>
+
+<button type="button" onclick="chuyen()">Chuyển độ F</button><hr/>
+
+
+<p>Nhập bán kính  <input type="number" id="bk"></p><br>
+<p>Diện tích hình tròn là:  <span id="ketQua" > 0 </span> </p> <br>
+<p>chu vi hình tròn là:  <span id="ketQuacv" > 0 </span> </p> <br>
+<button type="button" onclick="dienTichHinhTron()"> Tính toán</button>
+
+ <script>
+    function tinhtoan() {
+        var a=document.getElementById("ly").value;
+        var b=document.getElementById("hoa").value;
+        var c=document.getElementById("sinh").value;
+        document.getElementById('diemtrungbinh').innerHTML = (parseInt(a) + parseInt(b) +parseInt(c))/3;
+        document.getElementById('tong').innerHTML = (parseInt(a) + parseInt(b) +parseInt(c));
+    }
+    function chuyen() {
+        var doc=document.getElementById("doC").value;
+        document.getElementById("doF").innerHTML= (parseInt(doc)/5*9)+32;
+    }
+    function dienTichHinhTron() {
+
+        var m=document.getElementById("bk").value;
+        let result =  parseInt(m)*parseInt(m)*Math.PI.toString();
+              document.getElementById("ketQua").innerText = result.toString()
+            document.getElementById("ketQuacv").innerText = 2*m*Math.PI
+    }
+
+</script>
+
+
+</body>
+</html>
