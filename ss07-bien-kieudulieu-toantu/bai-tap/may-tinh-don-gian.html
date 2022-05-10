@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>máy tính đơn giản</title>
+</head>
+<body>
+<input type="number" id="sothu1">
+<input type="number" id="sothu2"><br>
+
+<button type="button" onclick="cong()" >Addition(+)</button>
+<button type="button" onclick="tru()">Subtraction(-)</button>
+<button type="button" onclick="nhan()">Mutiplication(*)</button>
+<button type="button" onclick="chia()">Division(/)</button>
+<p>Result: <span id="kq"> 0 </span></p>
+<script>
+    function cong() {
+        var a= document.getElementById('sothu1').value;
+        var b= document.getElementById('sothu2').value;
+        var sum = parseInt(a) + parseInt(b);
+        document.getElementById("kq").innerHTML= "Addition " + sum;}
+        function tru() {
+            var a= document.getElementById('sothu1').value;
+            var b= document.getElementById('sothu2').value;
+            var btru= parseInt(a)-parseInt(b);
+            document.getElementById("kq").innerHTML= "Subtraction " + btru;}
+    function nhan() {
+        var a= document.getElementById('sothu1').value;
+        var b= document.getElementById('sothu2').value;
+        var result;
+        document.getElementById("kq").innerHTML= "Mutiplication " + (parseInt(a) * parseInt(b));}
+    function chia() {
+        var a= document.getElementById('sothu1').value;
+        var b= document.getElementById('sothu2').value;
+        var result;
+        document.getElementById("kq").innerHTML= "Division " + (parseInt(a) /parseInt(b));}
+</script>
+</body>
+</html>
