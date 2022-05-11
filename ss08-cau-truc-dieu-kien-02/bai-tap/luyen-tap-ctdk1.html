@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập cấu trúc điều kiện</title>
+</head>
+<body>
+<p>Nhập vào số a <input type="number" id="box1"></p>
+<p>Nhập vào số b<input type="number" id="box2"></p>
+<button type="button" onclick="tinhtoan()">Kiểm tra</button>
+<p id ="kq"></p><hr/>
+<!----->
+<p>Nhập vào tuổi học sinh <input type="number" id="box3"></p>
+<button type="button" onclick="kiemtra()">Kiểm tra</button>
+<p id ="kq2"></p><hr/>
+<!------>
+<p>Nhập vào 1 số <input type="number" id="box4"></p>
+<button type="button" onclick="kiemtra2()">Kiểm tra</button>
+<p id ="kq3"></p><hr/>
+<!------>
+<p>Nhập vào số thứ 1 <input type="number" id="box5"></p>
+<p>Nhập vào số thứ 2 <input type="number" id="box6"></p>
+<p>Nhập vào số thứ 3 <input type="number" id="box7"></p>
+<button type="button" onclick="kiemtra3()">Kiểm tra</button>
+<p id ="kq4"></p><hr/>
+<!------>
+<p>Nhập vào điểm kiểm tra thường xuyên <input type="number" id="box8"></p>
+<p>Nhập vào điểm giữa kỳ <input type="number" id="box9"></p>
+<p>Nhập vào điểm cuối kỳ  <input type="number" id="box10"></p>
+<button type="button" onclick="xeploai()">Kiểm tra</button>
+<p id ="kq5"></p><hr/>
+<!------>
+<p>Nhập vào doanh số bán hàng  <input type="number" id="box11"></p>
+<button type="button" onclick="hoahong()">Kiểm tra</button>
+<p id ="kq6"></p><hr/>
+<!------>
+<p>Nhập vào số phút gọi  <input type="number" id="box12"></p>
+<button type="button" onclick="cuoc()">Kiểm tra</button>
+<p id ="kq7"></p><hr/>
+<script>
+    function tinhtoan() {
+    var a = document.getElementById("box1").value;
+    var b = document.getElementById("box2").value;
+    (a %b ==0)? document.getElementById("kq").innerHTML = a + " chia hết cho " + b : document.getElementById("kq").innerHTML = a + "  không chia hết cho " + b;
+    }
+    function kiemtra() {
+        var c =document.getElementById('box3').value;
+        (c<15) ? document.getElementById("kq2").innerHTML= "chưa đủ tuổi vào lớp 10": document.getElementById("kq2").innerHTML= " dã đủ tuổi vào lớp 10";
+    }
+    function kiemtra2() {
+        var d = document.getElementById('box4').value;
+        if (d <0) {
+            document.getElementById("kq3").innerHTML= d + " là số bé hơn 0";
+        } else if (d>0){
+            document.getElementById("kq3").innerHTML= d + " là số lớn hơn 0"
+        } else document.getElementById("kq3").innerHTML= "đây là số  0"
+
+    }
+    function kiemtra3() {
+        var e = document.getElementById("box5").value;
+        var f = document.getElementById("box6").value;
+        var g = document.getElementById("box7").value;
+        if (e >= f){
+            if (e>= g) {
+                document.getElementById("kq4").innerHTML= e + " là số lớn nhất"
+            } else document.getElementById("kq4").innerHTML= g + " là số lớn nhất"
+
+            } else if (f>=g) {document.getElementById("kq4").innerHTML= f + " là số lớn nhất"
+        } else document.getElementById("kq4").innerHTML= g + " là số lớn nhất"
+
+    }
+    function xeploai() {
+        var d1 = parseFloat(document.getElementById("box8").value);
+        var d2 = parseFloat(document.getElementById("box9").value);
+        var d3 = parseFloat(document.getElementById("box10").value);
+        var avg = (d1 + 2*d2 +3*d3)/6;
+        console.log(avg);
+        (avg >= 8) ? document.getElementById("kq5").innerHTML=" xếp loại giỏi":
+            (avg >=6.5) ? document.getElementById("kq5").innerHTML= " xếp loại khá":
+                (avg >= 4 ) ? document.getElementById("kq5").innerHTML= " xếp loại trung bình":
+                    document.getElementById("kq5").innerHTML= " xếp loại yếu";
+    }
+    function hoahong() {
+        var ds = parseInt(document.getElementById("box11").value);
+        (ds >= 10000000) ? document.getElementById("kq6").innerHTML= " hoa hồng là 5% =" + 5/100*ds:
+            (ds >= 7000000) ?document.getElementById("kq6").innerHTML= " hoa hồng là 3%= " + 3/100*ds:
+                (ds >= 5000000) ?document.getElementById("kq6").innerHTML= " hoa hồng là 1%= " + 1/100*ds:
+                    document.getElementById("kq6").innerHTML= " hoa hồng là 0% ";
+    }
+    function cuoc() {
+        var p=parseFloat(document.getElementById("box12").value);
+        (p<= 50) ? document.getElementById("kq7").innerHTML= "Cước gọi là " + (p*600 + 25000):
+            (p<= 200) ? document.getElementById("kq7").innerHTML= "Cước gọi là " + (50*600 + 25000+ (p-50)*400):
+                document.getElementById("kq7").innerHTML= "Cước gọi là " + (50*600 + 25000 + 400*150 + (p-200)*200);
+    }
+</script>
+</body>
+</html>

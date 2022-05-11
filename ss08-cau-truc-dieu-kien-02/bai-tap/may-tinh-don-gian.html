@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>máy tính đơn giản</title>
+    <style>
+        button {
+            width: 80px;
+            height: 80px;
+            background-color: #fffa08;
+            font-weight: bolder;
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="box1" style="width:17% "><br><br>
+<div>
+    <table style="background-color: blue">
+        <tr>
+            <td><button type="button" name="so" value ="1" onclick="inputValue(this.value)"> 1 </button></td>
+            <td><button type="button" name="so" value ="2" onclick="inputValue(this.value)"> 2 </button></td>
+            <td><button type="button" name="so" value ="3"  onclick="inputValue(this.value)"> 3 </button></td>
+            <td><button type="button" name="pheptinh" value ="+"onclick="inputValue(this.value)"> + </button></td>
+        </tr>
+
+        <tr>
+            <td><button type="button" name="so" value ="4" onclick="inputValue(this.value)"> 4 </button></td>
+            <td><button type="button" name="so" value ="5" onclick="inputValue(this.value)"> 5 </button></td>
+            <td><button type="button" name="so" value ="6" onclick="inputValue(this.value)"> 6 </button></td>
+            <td><button type="button" name="pheptinh" value ="-" onclick="inputValue(this.value)"> - </button></td>
+        </tr>
+        <tr>
+            <td><button type="button" name="so" value ="7" onclick="inputValue(this.value)"> 7 </button></td>
+            <td><button type="button" name="so" value ="8" onclick="inputValue(this.value)"> 8 </button></td>
+            <td><button type="button" name="so" value ="9" onclick="inputValue(this.value)"> 9</button></td>
+            <td><button type="button" name="pheptinh" value ="*" onclick="inputValue(this.value)"> * </button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="xoa()"> AC </button></td>
+            <td><button type="button" name="so" onclick="inputValue(this.value)"> 0 </button></td>
+            <td><button  name= "reusult" onclick="result()"> = </button></td>
+            <td><button type="button" name="pheptinh" value ="/" onclick="inputValue(this.value)"> / </button></td>
+        </tr>
+    </table>
+
+</div>
+<script>
+    let box1 = document.getElementById("box1");
+    function inputValue(value) {
+        box1.value += value;
+    }
+    function result() {
+        let result = eval(box1.value);
+        box1.value = result;
+    }
+    function xoa() {
+        box1.value="";
+    }
+</script>
+</body>
+</html>

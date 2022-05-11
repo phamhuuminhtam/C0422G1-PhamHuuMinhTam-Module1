@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính số ngày</title>
+</head>
+<body>
+<input type="number" id="thang">
+<button type="button" onclick="tinhtoan()"> Tính số ngày</button>
+<p id="kq">0</p>
+<script>
+    function tinhtoan() {
+        var month = parseInt( document.getElementById('thang').value);
+    if (month >12) {
+        document.getElementById('kq').innerHTML =" vui lòng nhập trong vòng 12 tháng";
+    } else {
+       switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12: document.getElementById('kq').innerHTML ="Tháng " + month + " có 31 ngày";break;
+        case 2: document.getElementById('kq').innerHTML ="Tháng " + month + " có 28 hoặc ngày";break;
+        default: document.getElementById('kq').innerHTML ="Tháng " + month + " có 30 ngày";
+    }}
+    }
+</script>
+</body>
+</html>

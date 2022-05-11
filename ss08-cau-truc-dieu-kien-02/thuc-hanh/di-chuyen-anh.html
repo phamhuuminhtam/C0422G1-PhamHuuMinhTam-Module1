@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>di chuyển ảnh</title>
+</head>
+<body onload="docReady()">
+<img src="https://cf.shopee.vn/file/336295657902e8becdeb174f977e0e8b" id="quabong" style="position:absolute;left:0; top:0;" height="100" width="80">
+<script>
+    function len() {
+        let e= document.getElementById('quabong');
+        e.style.top= parseInt(e.style.top) - 10  +"px";
+    }
+    function xuong() {
+        let e= document.getElementById('quabong');
+        e.style.top= parseInt(e.style.top) + 10  +"px";
+    }
+    function trai() {
+        let e= document.getElementById('quabong');
+        e.style.left= parseInt(e.style.left) - 10  +"px";
+    }
+    function phai() {
+        let e= document.getElementById('quabong');
+        e.style.left= parseInt(e.style.left) + 10  +"px";
+    }
+    function dichuyen(m) {
+        switch (m.keyCode) {
+            case 38:
+                len(); break;
+            case 40:
+                xuong(); break;
+            case 37:
+                trai(); break;
+            case 39:
+                phai(); break;
+
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown',dichuyen);
+    }
+
+</script>
+</body>
+</html>
