@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>phương trình bậc 2</title>
+</head>
+<body>
+<p><input type="number" id="thamsoa" style="width:50px">x<sup>2</sup> +<input type="number" id="thamsob" style="width:50px"> x + <input type="number" id="thamsoc" style="width:50px"> =0 </p>
+<button type="button" onclick="sol()">Giải phương trình</button>
+<p id="result">Nghiệm của phương trình</p>
+<script>
+    function sol() {
+        var a = document.getElementById("thamsoa").value;
+        var b = document.getElementById("thamsob").value;
+        var c = document.getElementById("thamsoc").value;
+        if (a == 0) {
+            (b == 0 && c == 0) ? document.getElementById("result").innerText = "Phương trình vô số nghiệm" :
+                (c != 0 && b == 0) ? document.getElementById("result").innerText = "Phương trình vô nghiệm" :
+                    (b != 0) ? document.getElementById("result").innerText = "Phương trình có nghiệm là x=" + (-c / b) : "";
+        } else {
+            var d = ((b * b) - (4 * a * c));
+            console.log(d);
+            if (d == 0) {
+                document.getElementById("result").innerText = "Phương trình có nghiệm kép là x1=x2= " + (-b / (2 * a));
+            }else if (d > 0) {
+                document.getElementById("result").innerText = "Phương trình có nghiệm  x1=" + ((-b + Math.sqrt(d)) / (2 * a)) + " và có nghiệm x2=" + ((-b - Math.sqrt(d)) / (2 * a));
+            } else {
+                document.getElementById("result").innerText = "Phương trình vô nghiệm"
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

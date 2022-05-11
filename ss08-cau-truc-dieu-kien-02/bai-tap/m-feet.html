@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>m sang feet</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Mesure</td>
+        <td>Forn </td>
+        <td>To </td>
+    </tr>
+    <tr>
+        <Td><input type="number" id="nhapdulieu"></Td>
+        <Td><select id="From2">
+            <option value="met1">met  </option>
+            <option value="feet1">feet</option>
+        </select></Td>
+        <Td><select id="To2">
+            <option value="met2">met</option>
+            <option value="feet2">feet</option>
+        </select>  </Td>
+        <td><button type="button"  onclick="convert1()" style="background-color: mediumpurple; color: white" >Convert</button></td>
+    </tr>
+
+</table>
+<p style="color: blue">Result <span id="kq1"></span></p>
+<script>
+    function convert1() {
+        var mesure=document.getElementById("nhapdulieu").value;
+        var fromM =document.getElementById("From2").value;
+        var toM =document.getElementById("To2").value;
+        var retur;
+        if (fromM =="met1" && toM =="feet2") {
+            retur=(parseFloat(mesure)*3.2808) + "feet"; console.log(retur);
+        }
+        else if (fromM =="met1" && toM =="met2") {
+            retur=parseFloat(mesure) + "m";
+        }
+        else if (fromM =="feet1" && toM =="met2") {
+            retur=(parseFloat(mesure)/3.2808) + "m";
+        }
+        else if (fromM =="feet1" && toM =="feet2") {
+            retur=parseFloat(mesure) + "feet";
+        }
+        document.getElementById("kq1").innerHTML= retur;
+    }
+</script>
+</body>
+</html>

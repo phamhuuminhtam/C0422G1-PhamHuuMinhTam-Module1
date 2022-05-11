@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>độ c sang độ F</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Temp</td>
+        <td>Forn </td>
+        <td>To </td>
+    </tr>
+    <tr>
+        <Td><input type="number" id="nhapdulieu"></Td>
+        <Td><select id="From1">
+            <option value="CT1">*C  </option>
+            <option value="FT1">*F</option>
+        </select></Td>
+        <Td><select id="To1">
+            <option value="CT2">*C</option>
+            <option value="FT2">*F</option>
+        </select>  </Td>
+        <td><button type="button"  onclick="convert()" style="background-color: mediumpurple; color: white" >Convert</button></td>
+    </tr>
+
+</table>
+<p style="color: blue">Result <span id="result"></span></p>
+<script>
+    function convert() {
+        var temp=document.getElementById("nhapdulieu").value;
+        var fromT=document.getElementById("From1").value;
+        var toT=document.getElementById("To1").value;
+        var Result;
+        if (fromT=="CT1" && toT =="CT2") {
+            Result=parseInt(temp) + "*C";
+        }
+        else if (fromT =="CT1" && toT =="FT2") {
+            Result=(parseInt(temp)*9/5+32) + "*F";
+        }
+        else if (fromT =="FT1" && toT =="CT2") {
+            Result=((parseInt(temp) -32)*5/9) + "*C";
+        }
+        else if (fromT =="FT1" && toT =="FT2") {
+            Result=parseInt(temp) + "*F";
+        }
+        document.getElementById("result").innerHTML= Result;
+    }
+    </script>
+</body>
+</html>
