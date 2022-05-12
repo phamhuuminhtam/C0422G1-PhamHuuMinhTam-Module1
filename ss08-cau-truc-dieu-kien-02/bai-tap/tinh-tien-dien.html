@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính tiền điện</title>
+</head>
+<body>
+<p>Nhập số điện tiêu thụ  <input type="number" id="box12"></p>
+<button type="button" onclick="sol()">Kiểm tra</button>
+<p id ="result"></p><hr/>
+<script>
+    function sol() {
+    var eLec=parseFloat( document.getElementById('box12').value);
+    (eLec <= 50) ? document.getElementById("result").innerHTML= "bạn đang ở điện bậc 1, tiền điện là: " + (eLec *1678):
+        (eLec <= 100) ? document.getElementById("result").innerHTML= "bạn đang ở điện bậc 2, tiền điện là: " + (50 *1678 + (eLec-50)*1734):
+            (eLec <= 200) ? document.getElementById("result").innerHTML= "bạn đang ở điện bậc 3, tiền điện là: " + (50 *1678 + 50*1734+ (eLec-100)*2014):
+                (eLec <= 300) ? document.getElementById("result").innerHTML= "bạn đang ở điện bậc 4, tiền điện là: "+ (50 *1678 + 50*1734+ 100*2014+ (eLec-200)*2536):
+                    (eLec <= 400) ? document.getElementById("result").innerHTML= "bạn đang ở điện bậc 5, tiền điện là: "+ (50 *1678 + 50*1734+ 100*2014+ 100*2536 +(eLec-300)*2834):
+                        document.getElementById("result").innerHTML= "bạn đang ở điện bậc 6, tiền điện là: "+ (50 *1678 + 50*1734+ 100*2014+ 100*2536 +100 *2834 + (eLec -400)*2927);
+    }
+</script>
+</body>
+</html>

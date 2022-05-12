@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thuế</title>
+</head>
+<body>
+<p>Nhập thu nhập chịu thuế  <input type="number" id="box12"></p>
+<button type="button" onclick="sol()">Kiểm tra</button>
+<p id ="result"></p><hr/>
+<script>
+    function sol() {
+        var tax=parseFloat( document.getElementById('box12').value);
+
+        (tax <= 5000000) ? document.getElementById("result").innerHTML= "bạn đang ở thuế 5%, thuế phải nộp là " + (tax *5/100):
+            (tax <= 10000000) ? document.getElementById("result").innerHTML= "bạn đang ở thuế 10%, thuế phải nộp là " + (tax *10/100 -250000):
+                (tax <= 18000000) ? document.getElementById("result").innerHTML= "bạn đang ở thuế 15%, thuế phải nộp là " + (tax *15/100 -750000):
+                    (tax <= 32000000) ? document.getElementById("result").innerHTML= "bạn đang ở thuế 20%, thuế phải nộp là " + (tax *20/100 -1650000):
+                        (tax <= 52000000) ? document.getElementById("result").innerHTML= "bạn đang ở thuế 25%, thuế phải nộp là " + (tax *25/100 -3250000):
+                            (tax <= 80000000) ? document.getElementById("result").innerHTML= "bạn đang ở thuế 30%, thuế phải nộp là " + (tax *30/100 -5850000):
+                                document.getElementById("result").innerHTML= "bạn đang ở thuế 35%, thuế phải nộp là " + (tax *35/100 -9850000);
+    }
+</script>
+</body>
+</html>
