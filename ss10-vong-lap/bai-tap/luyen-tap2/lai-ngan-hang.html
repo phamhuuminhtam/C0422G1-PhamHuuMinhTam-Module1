@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lãi suất ngân hàng</title>
+</head>
+<body>
+<input type="number" id="loan" placeholder="nhập số tiền vay"> <br>
+<input type="number" id="month" placeholder="nhập số tháng vay"> <br>
+<input type="number" id="interest" placeholder="nhập lãi vay theo tháng"> <br>
+<button type="button" onclick="sol()">Tính lãi</button>
+<p id="ketqua"></p>
+<script>
+    function sol() {
+    var m=parseInt( document.getElementById('month').value);
+    var re= parseInt( document.getElementById('loan').value);
+    var i=(document.getElementById('interest').value);
+    var count=1;
+
+    while (count <= m) {
+        re = re + (re * i /100);
+        count++
+    } document.getElementById("ketqua").innerText= "Tổng gốc lãi phải trả là: " + re
+    }
+</script>
+</body>
+</html>

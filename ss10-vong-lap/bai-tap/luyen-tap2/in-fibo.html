@@ -10,13 +10,13 @@
     var a1=0;
     var a2=1;
     var a;
-    var i=1;
-    document.write("f(1)= 1" +"<br>");
+    var i=0;
+
     while(i< lim){
         a = a1+a2;
+        document.write("f("+ (i+1) +")=" + a2 + "<br>");
         a1=a2;
         a2=a;
-        document.write("f("+ (i+1) +")=" + a + "<br>");
         i++
     }
 </script>
