@@ -9,16 +9,16 @@
     var f=parseInt(prompt("nhập thứ tự chuỗi fibo cần tìm"))
     var a1=0
     var a2=1
-    var i=1
-    var a;
+    var i=0
     var sum=0;
         while (i<f){
-        a = a1+a2
+       var a = a1+a2
+        sum=sum+a2;
+       console.log(sum)
         a1=a2
         a2=a
         i++
-        sum=sum+a
-    }
+        }
 
     document.write(sum)
 </script>
