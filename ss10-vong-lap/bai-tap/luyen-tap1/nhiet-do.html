@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nhiệt độ</title>
+</head>
+<body>
+<script>
+    var temp= parseInt(prompt("nhập nhiệt độ"))
+    while (temp> 100) {
+        alert("vui lòng giảm nhiệt độ");
+        var temp=parseInt(prompt("nhập nhiệt độ"))
+
+    }
+    while (temp<20) {
+        alert("vui lòng tăng nhiệt độ");
+        var temp=parseInt(prompt("nhập nhiệt độ"))
+
+    }
+    document.write("nhiệt độ " + temp + " rất ok")
+</script>
+</body>
+</html>

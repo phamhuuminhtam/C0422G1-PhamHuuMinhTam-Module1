@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>in fibonacce</title>
+</head>
+<body>
+<script>
+    var lim=parseInt(prompt("nhập số fibonacce cần in"));
+    var a1=0;
+    var a2=1;
+    var a;
+    var i=1;
+    document.write("f(1)= 1" +"<br>");
+    while(i< lim){
+        a = a1+a2;
+        a1=a2;
+        a2=a;
+        document.write("f("+ (i+1) +")=" + a + "<br>");
+        i++
+    }
+</script>
+</body>
+</html>

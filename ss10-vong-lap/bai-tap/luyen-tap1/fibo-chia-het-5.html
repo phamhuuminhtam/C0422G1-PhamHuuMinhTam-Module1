@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fibo chia hết 5</title>
+</head>
+<body>
+<script>
+    var f=parseInt(prompt("nhập thứ tự chuỗi fibo cần tìm"))
+    var a1=1
+    var a2=2
+    var i=3
+        while (i<f){
+        var a = a1+a2
+        a1=a2
+        a2=a
+        i++
+        if (a%5==0) {
+        document.write(a);
+        break;}
+    }
+</script>
+</body>
+</html>

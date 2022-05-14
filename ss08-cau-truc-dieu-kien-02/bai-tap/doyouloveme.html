@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <title>do you love me?</title>
 </head>
-<body>
+<body >
 <h1> Do You Love Me?</h1>
-<button onclick="alert("<3")">Yes</button>
-<button onclick="random()">NO</button>
+<button type="button" onclick="alert('< 3')" > Yes</button>
+<button id ="No" onmouseover="random()" >NO</button>
 <script>
     function random() {
+    var x = Math.round(Math.random()*800);
+    var y = Math.round(Math.random()*900);
+    var e = document.getElementById("No");
+    e.style.position="absolute";
+    e.style.top= x + "px";
+    e.style.left= y + "px";
+        }
 
-
-    }
 </script>
 </body>
 </html>

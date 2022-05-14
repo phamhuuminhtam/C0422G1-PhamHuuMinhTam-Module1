@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>lãi ngân vay ngân hàng</title>
 </head>
 <body>
-$END$
+<p>Nhập số tiền vay <input type="number" id="box1"></p>
+<p>Nhập lãi suất năm <input type="number" id ="box2"></p>
+<p>Nhập số tháng vay <input type="number" id="box3"></p>
+<button type="button" onclick="sol()">Tính Toán</button>
+<p id="result"></p>
+<SCRIPT>
+    function sol() {
+        var a=document.getElementById('box1').value;
+        var b=document.getElementById('box2').value;
+        var c=document.getElementById('box3').value;
+        var total = a * Math.pow((1+ b/1200),c);
+        document.getElementById("result").innerHTML= "gốc lãi cần trả là :" + parseInt(total);
+        }
+
+</SCRIPT>
 </body>
 </html>

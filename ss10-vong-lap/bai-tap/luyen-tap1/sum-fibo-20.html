@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var f=parseInt(prompt("nhập thứ tự chuỗi fibo cần tìm"))
+    var a1=0
+    var a2=1
+    var i=1
+    var a;
+    var sum=0;
+        while (i<f){
+        a = a1+a2
+        a1=a2
+        a2=a
+        i++
+        sum=sum+a
+    }
+
+    document.write(sum)
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vòng lặp lồng</title>
+    <style>
+        table{
+            background-color: peachpuff;
+            border-color: blue;
+        }
+        tr td {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<script>
+
+    var  bang= "<table border='1' cellspacing='0'>";
+    for (i=1; i<=10; i++){
+       bang= bang + "<tr>";
+       for (j=1; j<=10; j++){
+           bang= bang + "<td>" + (i*j) + "</td>"
+        }
+       bamg=bang+"</tr>"
+    }
+    bang=bang+"</table>"
+    document.write(bang)
+</script>
+</body>
+</html>

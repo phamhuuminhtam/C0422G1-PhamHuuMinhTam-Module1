@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fibonacce</title>
+</head>
+<body>
+<script>
+    var f=parseInt(prompt("nhập thứ tự chuỗi fibo cần tìm"))
+    var a1=1
+    var a2=2
+    var i=3
+    document.write("0, 1, 2,")
+    while (i<f){
+        var a = a1+a2
+        a1=a2
+        a2=a
+        i++
+     document.write(a+ ", ")
+    }
+</script>
+</body>
+</html>

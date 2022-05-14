@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đoán số</title>
+</head>
+<body>
+<button type="button" id="bt" onclick="play()">Bắt đầu</button>
+<script>
+    function play() {
+        var number = parseInt(prompt("khoảng số muốn dự đoán"));
+        a = Math.floor(Math.random() * number);
+        console.log(a)
+        var count = 0;
+        do {
+            var guess = prompt('nhập số bạn dự đoán');
+            if (guess == a) {
+                document.write('Chúc mừng bạn đã đoán đúng!');
+                break;
+            } else if (guess < a) {
+                alert("số bạn đoán lớn hơn");
+            } else {
+                alert("số bạn đoán lớn hơn");
+            }
+            count = count + 1;
+            if (count == 3) {
+                document.write("Bạn đã nhập hết 3 lần! Chúc bạn may mắn lần sau!");
+                break;
+            }
+        }
+        while (guess != a);
+    }
+  </script>
+</body>
+</html>

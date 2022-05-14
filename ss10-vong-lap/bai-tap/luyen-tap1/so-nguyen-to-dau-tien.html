@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>số nguyên tố</title>
+</head>
+<body>
+<script>
+    var x= parseInt(prompt("nhập số lượng số nguyên tố đầu tiền"))
+    var count=0;
+    var i=2;
+    var dem=0;
+    while (count<x) {
+        for (var j=2; j<i;j++){
+                if (i%j==0) {
+                    dem=dem+1;
+                break;}
+
+            }
+        if (dem==0){
+            count=count+1;
+            document.write(i + "<br>")
+        }
+        i=i+1;
+        dem=0;
+    }
+
+
+</script>
+
+</body>
+</html>
