@@ -5,6 +5,28 @@
     <title>vẽ trái tim</title>
 </head>
 <body>
+<script>
 
+    for (var k=1; k<=2;k++){
+        for (var l=1;l<=11;l++){
+            if ((k==1 && l ==1) || (k==1 && l==6) ||(k==1 && l==11)) {
+                document.write("&nbsp&nbsp")
+            } else document.write("*")
+        } document.write("<br>")
+    }
+    
+    for (var x =6; x>0;x--){
+        for (var z=1; z<=6-x;z++){
+            document.write('&nbsp&nbsp')
+        }
+        for (var y=1;y<=x;y++) {
+            document.write('*')
+        }
+        for (var a=1; a<=x-1; a++){
+            document.write('*')
+        }
+        document.write('<br>')
+    }
+</script>
 </body>
 </html>

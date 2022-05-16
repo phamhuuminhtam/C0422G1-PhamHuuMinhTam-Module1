@@ -7,17 +7,20 @@
 <body>
 <script>
     var temp= parseInt(prompt("nhập nhiệt độ"))
-    while (temp> 100) {
-        alert("vui lòng giảm nhiệt độ");
-        var temp=parseInt(prompt("nhập nhiệt độ"))
+    while (temp>100 || temp<20){
+        while (temp > 100) {
+            alert("vui lòng giảm nhiệt độ");
+            var temp = parseInt(prompt("nhập nhiệt độ"))}
 
-    }
-    while (temp<20) {
-        alert("vui lòng tăng nhiệt độ");
-        var temp=parseInt(prompt("nhập nhiệt độ"))
+        while (temp<20) {
+            alert("vui lòng tăng nhiệt độ");
+            var temp=parseInt(prompt("nhập nhiệt độ"))}
+
 
     }
     document.write("nhiệt độ " + temp + " rất ok")
+
+
 </script>
 </body>
 </html>
