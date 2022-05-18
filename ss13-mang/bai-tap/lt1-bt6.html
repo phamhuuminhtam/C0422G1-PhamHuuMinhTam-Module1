@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm v trong mảng</title>
+</head>
+<body>
+<script>
+    var arr= new Array(10)
+    var count=0
+    for (var i=0; i< arr.length;i++){
+        arr[i]=parseInt( prompt('nhập phần tử thứ '+ (i+1) + " của mảng"))}
+    var x= prompt("nhập phần tử x cần tìm trong mảng")
+    for (var i =0; i<arr.length; i++){
+        if (x==arr[i]){
+            count++}
+        }
+    count !=0 ? document.write(x + " is in the array") : document.write(x + " is not in the array");
+
+</script>
+</body>
+</html>

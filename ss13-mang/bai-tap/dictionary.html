@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<p>Nhập từ</p>
+<input type="text" id="box1" placeholder="nhập từ tiếng Việt cần chuyển" style="width: 300px">
+<button type="button" onclick="trans()">Dịch</button>
+<p id="result"></p>
+<script>
+      function trans() {
+      var str=document.getElementById("box1").value;
+      var arrEng=['Televison', 'Table', 'Pencil', 'Pen', 'Motorbike']
+      var arrVn=[ 'Tivi', 'Bàn', 'Bút chì', 'Bút', 'Xe máy']
+      for (var i=0; i<arrVn.length;i++)   {
+          if (str == arrVn[i]){
+              document.getElementById("result").innerHTML= arrEng[i]
+              break;
+          } else  document.getElementById("result").innerText= "Không tìm thấy trong từ điển hiện tại"
+      }
+      }
+</script>
+</body>
+</html>

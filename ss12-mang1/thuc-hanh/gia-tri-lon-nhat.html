@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>giá trị lớn nhất trong mảng</title>
+</head>
+<body>
+<script>
+    let numbers = [-3, 5, 30, 3, 20, 10];
+    var max=0;
+    var position
+    for (var i=0; i<numbers.length; i++){
+        if (numbers[i]> max){
+            max = numbers[i]
+            position= i
+        }
+    } document.write("giá trị lớn nhất trong mảng là: "+ max + ' và vị trí index là ' +position)
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tạo và thao tác với mảng</title>
+</head>
+<body>
+<label> Simple Screen</label>
+<input type="text" id="textin">
+<button type="button" onclick="adtext()">Add</button>
+<button type="button" onclick="display()">Display</button>
+<p id="result"></p>
+<script>
+    var arr= Array()
+    // function adtext(){
+    //  arr.push(document.getElementById('textin').value);
+    //  document.getElementById("textin").value="";
+    // }
+    var x =0;
+    function adtext() {
+       arr[x]= [document.getElementById('textin').value]
+        document.getElementById("textin").value=""
+        x++
+    } document.write(arr)
+    function display(){
+        let e = "<hr/>";
+        for (let i = 0; i < arr.length; i++) {
+            e += "Element " + i + " = " + arr[i] + "<br/>";
+
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+</script>
+</html>

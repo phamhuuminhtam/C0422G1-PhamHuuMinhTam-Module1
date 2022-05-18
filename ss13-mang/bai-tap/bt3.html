@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyển hoa thường</title>
+</head>
+<body>
+<input type="text" id="box">
+<button type="button" onclick="convert()"> Chuyển</button>
+<p id="result"></p>
+<script>
+    function convert() {
+        var str = document.getElementById("box").value
+        var upperCase= "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        var lowerCase= 'abcdefghijklmnopqrstuvwxyz'
+        var newArr=[]
+        for (var i=0; i<str.length;i++){
+            (upperCase.indexOf(str[i])!=-1) ? newArr.push(str[i].toLowerCase()):
+                (lowerCase.indexOf(str[i])!=-1) ? newArr.push(str[i].toUpperCase()):
+                    newArr.push(str[i]);
+        }document.getElementById('result').innerHTML= newArr.join("")
+    }
+</script>
+</body>
+</html>

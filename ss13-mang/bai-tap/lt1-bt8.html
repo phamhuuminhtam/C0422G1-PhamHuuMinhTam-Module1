@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sắp xếp mảng</title>
+</head>
+<body>
+<script>
+    var arr= new Array(10)
+    var a=[]
+    var temp=0
+    for (var i=0; i< arr.length;i++){
+        arr[i]=parseInt( prompt('nhập phần tử thứ '+ (i+1) + " của mảng"))}
+    for (var i=0; i<arr.length;i++){
+        for (var j=0; j<i;j++){
+            if (arr[j]<arr[i]){
+                temp=arr[i]
+                arr[i]=arr[j]
+                arr[j]=temp
+            }
+        }
+    } document.write(arr)
+</script>
+</body>
+</html>

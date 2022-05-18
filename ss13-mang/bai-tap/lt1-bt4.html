@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đảo ngược phần tử</title>
+</head>
+<body>
+<script>
+    var arr=[]
+    var x=[]
+    var index=0;
+    for (i=0; i<10;i++){
+        arr[i]=parseInt( prompt('nhập phần tử thứ '+ (i+1) + " của mảng"))}
+    for (var j =arr.length-1; j>=0; j--){
+        x[index]= arr[j]
+        index++
+    }
+    arr= x
+    document.write(arr)
+</script>
+</body>
+</html>

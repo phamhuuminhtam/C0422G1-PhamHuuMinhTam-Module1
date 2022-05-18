@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tam giác cân</title>
+</head>
+<body>
+<script>
+    var a =parseInt( prompt("nhập cạnh tam giác"))
+    for (var m =a; m>0;m--){
+        for (var n=1;n<=m-1;n++){
+            document.write('&nbsp&nbsp')
+        } console.log (n)
+        for (var k=1;k<=a+1-n;k++) {
+            document.write('*')
+        }
+        for (var z=1; z<=a-n;z++){
+            document.write(("*"))
+        }
+        document.write("<br>")
+    }
+</script>
+</body>
+</html>

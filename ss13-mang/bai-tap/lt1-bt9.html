@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nối mảng</title>
+</head>
+<body>
+<script>
+    var a= Array(10)
+    var b = Array(10)
+    var c=[]
+    for (var i=0; i<10;i++){
+        a[i]= prompt("nhâp phần tử "+ (i+1)+  " của mảng a")
+        b[i]= prompt("nhâp phần tử "+ (i+1)+  " của mảng b")
+    }
+    for (var j=0; j< (a.length+b.length);j++){
+        if (j<a.length) {
+            c[j]=a[j]
+        }else {
+            c[j]=b[j-b.length]
+        }
+    }document.write(c)
+
+</script>
+</body>
+</html>

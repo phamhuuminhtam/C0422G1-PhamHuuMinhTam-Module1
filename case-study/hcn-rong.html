@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>in hình chữ nhật rỗng</title>
+</head>
+<body>
+<script>
+    var len= prompt("nhập chiều dài")
+    var wid= prompt("nhập chiều rộng")
+    for (var i=1; i<=wid; i++){
+        for (var j=1; j<=len;j++){
+            if( j != 1 && j != len && i!=1 && i!=wid) {
+                document.write("&nbsp&nbsp")
+            } else {
+                document.write("*")
+                if (j==len) {
+                    document.write("<br>")
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

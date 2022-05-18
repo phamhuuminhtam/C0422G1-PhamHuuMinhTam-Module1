@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>vẽ trái tim</title>
+    <title>tam giác ngược</title>
 </head>
 <body>
-<script>
 
-    for (var k=1; k<=2;k++){
-        for (var l=1;l<=11;l++){
-            if ((k==1 && l ==1) || (k==1 && l==6) ||(k==1 && l==11)) {
+<script>
+    var k=parseInt( prompt("nhập chiều dài cạnh tam giác"));
+    for (var o=1; o<=2;o++){
+        for (var l=1;l<=2*k-1;l++){
+            if ((o==1 && l ==1) || (o==1 && l==k) ||(o==1 && l==2*k-1)) {
                 document.write("&nbsp&nbsp")
             } else document.write("*")
         } document.write("<br>")
     }
 
-    for (var x =6; x>0;x--){
-        for (var z=1; z<=6-x;z++){
+    for (var x =k; x>0;x--){
+        for (var z=1; z<=k-x;z++){
             document.write('&nbsp&nbsp')
         }
         for (var y=1;y<=x;y++) {
@@ -25,8 +26,7 @@
         for (var a=1; a<=x-1; a++){
             document.write('*')
         }
-        document.write('<br>')
-    }
+        document.write('<br>')}
 </script>
 </body>
 </html>

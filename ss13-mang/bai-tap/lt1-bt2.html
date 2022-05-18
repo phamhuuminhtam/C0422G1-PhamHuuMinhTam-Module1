@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>giá trị lớn nhất</title>
+</head>
+<body>
+<script>
+    var arr=[]
+    var max=0;
+    var position=0;
+    for (i=0; i<10;i++){
+        arr[i]=parseInt( prompt('nhập phần tử thứ '+ (i+1) + " của mảng"))
+        console.log(arr[i])
+        if (arr[i]> max){
+            max = arr[i]
+            position= i
+            console.log(max)
+        }
+    } document.write("giá trị lớn nhất trong mảng là: "+ max + ' và vị trí index là ' +position)
+</script>
+</body>
+</html>
