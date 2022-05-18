@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm ký tự số trong mảng</title>
+</head>
+<body>
+<script>
+    var arr=[]
+    var count=0
+    var num=prompt("nhập số lượng phần tử của mảng")
+    var numchar="0123456789"
+    for (var i=0; i<num;i++){
+        arr[i]=prompt('nhập phần tử thứ '+ (i+1) + " của mảng")
+        console.log(arr)
+        var arrTemp= arr[i]
+        for (var j=0; j<arrTemp.length; j++){
+            console.log(arrTemp[j])
+            if (numchar.indexOf(arrTemp[j])!=-1){
+                count++
+            }
+        }
+    }document.write("số ký tự số trong mảng là "+ count)
+</script>
+</body>
+</html>

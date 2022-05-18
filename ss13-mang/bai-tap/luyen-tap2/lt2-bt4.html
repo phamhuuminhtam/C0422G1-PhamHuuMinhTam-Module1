@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đếm số từ</title>
+</head>
+<body>
+<input type="text" id="box">
+<button type="button" onclick="count()"> Đếm</button>
+<p id="result"></p>
+<script>
+    function count() {
+        var c = 0
+        var str = document.getElementById("box").value
+        var arr= str.trim()
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == " "&& arr[i+1]!=" ") {
+                c++
+                console.log(c)
+            }
+        }
+        document.getElementById("result").innerHTML = "Số từ trong chuỗi là " + (c + 1);
+    }
+</script>
+</body>
+</html>
