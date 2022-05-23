@@ -9,10 +9,10 @@
     var arr= new Array(10)
     var a=[]
     var temp=0
-    for (var i=0; i< arr.length;i++){
+    for (let i=0; i< arr.length;i++){
         arr[i]=parseInt( prompt('nhập phần tử thứ '+ (i+1) + " của mảng"))}
-    for (var i=0; i<arr.length;i++){
-        for (var j=0; j<i;j++){
+    for (let i=0; i<arr.length;i++){
+        for (let j=0; j<i;j++){
             if (arr[j]<arr[i]){
                 temp=arr[i]
                 arr[i]=arr[j]

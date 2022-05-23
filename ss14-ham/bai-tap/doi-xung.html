@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra đối xứng</title>
+</head>
+<body>
+<script>
+    var str=prompt("nhập vào từ cần kiểm tra")
+    var arr=str.split("")
+
+    symmetry(arr)
+
+    function symmetry(arr) {
+        var rra=reverseArr(arr)
+        for (let i=0; i<arr.length;i++){
+            if(arr[i] != rra[i]){
+                return document.write("mảng không đối xứng")
+            }
+        }
+        return document.write("mảng đối xứng")
+    }
+    function reverseArr(arr) {
+        let arrNew = []
+        let j=0
+        for (var i = arr.length-1; i >=0; i--) {
+            arrNew[j] = arr[i]
+            j++
+        } return arrNew
+    }
+</script>
+</body>
+</html>

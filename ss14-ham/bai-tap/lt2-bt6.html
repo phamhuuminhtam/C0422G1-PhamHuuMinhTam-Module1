@@ -9,7 +9,7 @@
     let a =prompt("nhập vào số nguyên a")
     document.write(checkPositiveInteger(a))
     function checkPositiveInteger(a) {
-        if (a>0){
+        if (a>0 && a%1==0){
             return true
         }else return  false
 

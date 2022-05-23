@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quản lý sản phảm</title>
+    <style>
+        tr,td {
+            width: 150px;
+        }
+        button{
+            background-color: greenyellow;
+            border inherit ;
+        }
+    </style>
+</head>
+<body>
+<h1>Add new Product</h1>
+<input type="text" placeholder="New Product" id ='inputProduct'>
+<button type="button" onclick="addProduct()">Add</button>
+<h1>Display all Product</h1>
+<div id="tableProduct"></div>
+<script>
+    var arr=[]
+    function display() {
+        var bang='<table border="1">'
+        for (let i=0;i<arr.length;i++){
+            bang= bang + '<tr>'
+            bang =bang + '<td>' + arr[i] +"</td>"
+            bang =bang + '<td>'+ "<button type='button' onclick='edit("+ i +")'>Edit</button>" +"</td>"
+            bang =bang + '<td>' + "<button type='button'  onclick='deletei("+ i +")'>Delete</button>" +"</td>"
+
+        }
+        bang= bang + '</tr>' +"</table>"
+        document.getElementById("tableProduct").innerHTML=bang
+    }
+    onload=display()
+    function addProduct() {
+    arr.push(document.getElementById('inputProduct').value)
+        display()
+    }
+    function deletei(i) {
+        arr.splice(i,1)
+        display()
+    }
+    function edit(i) {
+        arr[i]=prompt("nhập thông tin mới của sản phẩm")
+        display()
+    }
+
+
+
+</script>
+</body>
+</html>
