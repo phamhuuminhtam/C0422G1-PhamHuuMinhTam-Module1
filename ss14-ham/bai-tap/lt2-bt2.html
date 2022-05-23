@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>diện tích, chu vi hình tròn</title>
+</head>
+<body>
+<script>
+    let r =prompt("nhập bán kính")
+    let s= circleArea(r)
+    let d= diameter(r)
+    document.write("diện tích hình tròn là :" +s +"<br>")
+    document.write("chu vi hình tròn là "+d+"<br>")
+    function circleArea(r) {
+        return r*r*Math.PI
+    }
+    function diameter(r) {
+        return 2*r*Math.PI
+    }
+</script>
+</body>
+</html>

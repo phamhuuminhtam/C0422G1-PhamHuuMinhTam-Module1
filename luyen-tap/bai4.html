@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đếm phần tử</title>
+</head>
+<body>
+<script>
+    var num=prompt("nhập số phần tử của mảng")
+    var arr= []
+    var count=1
+    for (var i=0; i< num;i++){
+        arr[i]=prompt('nhập phần tử thứ '+ (i+1) + " của mảng")
+    }
+    for (var i=0; i<arr.length;i++){
+        if (arr[i]==""){
+            continue;
+        }
+        for (var j=i+1;j<arr.length;j++){
+            if (arr[i]==arr[j]){
+            arr[j]="";
+            count++;
+            }
+        }
+
+        document.write( arr[i] + ":" + count + " lần" +"<br>");
+        count=1;
+        }
+
+</script>
+</body>
+</html>

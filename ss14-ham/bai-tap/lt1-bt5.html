@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chòm sao</title>
+</head>
+<body>
+<p>Nhập tên ngôi sao</p>
+<input type="text" id="box1" placeholder="nhập ngôi sao cần tìm" style="width: 300px">
+<button type="button" onclick="search()">Tìm</button>
+<p id="result"></p>
+<script>
+    function search() {
+        var str=document.getElementById("box1").value;
+        var arrStar=['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus']
+        var arrConstellation=[ 'Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo']
+        for (var i=0; i<arrStar.length;i++)   {
+            if (str ==arrStar[i]){
+                document.getElementById("result").innerHTML= arrStar[i] + ' trong chòm sao '+ arrConstellation[i]
+                break;
+            } else  document.getElementById("result").innerText= "Không tìm thấy ngôi sao này"
+        }
+    }
+</script>
+</body>
+</html>

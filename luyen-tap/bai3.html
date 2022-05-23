@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>không phải số nguyên tố</title>
+</head>
+<body>
+<script>
+    var num=parseInt( prompt("nhập số giới hạn của dãy"))
+    var count=0
+    for (var j=0; j<= num;j++){
+        for (var i=0; i<=j;i++){
+            if (j%i == 0){
+                count++;
+            }
+        }
+        if (count>2) {
+                document.write(j+"<br>")
+        }
+        count=0;
+
+    }
+</script>
+</body>
+</html>

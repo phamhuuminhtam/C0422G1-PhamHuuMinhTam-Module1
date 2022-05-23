@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr=[]
+    var num=prompt("nhập số phần tử của mảng")
+    for (var i=0; i<num;i++){
+        arr[i]= parseInt( prompt("nhập phần tử thứ " + (i+1)))
+    }
+    for (var j=0;j<arr.length;j++){
+        if (arr[j]+arr[j+1]==20){
+            arr[j]=20
+            arr[j+1]=20
+            j++
+        }
+    }
+    document.write(arr)
+</script>
+</body>
+</html>

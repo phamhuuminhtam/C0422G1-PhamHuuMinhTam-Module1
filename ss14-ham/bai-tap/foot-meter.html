@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Foot-meter</title>
+</head>
+<body>
+<script>
+    var meterVal=prompt("nhập số mét")
+    var footVal=prompt("nhập số foot")
+    footConvert(meterVal)
+    meterConvert(footVal)
+    function footConvert(meterVal) {
+        document.write(meterVal + "m =" + 3.279 * meterVal + "f" +"<br>")
+    }
+    function meterConvert(footVal) {
+        document.write( footVal + "f =" + 0.305 * footVal+ "m" +"<br>")
+    }
+</script>
+</body>
+</html>

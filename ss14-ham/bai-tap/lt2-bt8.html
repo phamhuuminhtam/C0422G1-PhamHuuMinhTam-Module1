@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reverse arr</title>
+</head>
+<body>
+<script>
+    let arr=[1,2,3,4,5]
+    document.write(reverseArr(arr))
+    console.log(reverseArr(arr))
+    function reverseArr(arr) {
+        let arrNew = []
+        let j=0
+        for (var i = arr.length-1; i >=0; i--) {
+            arrNew[j] = arr[i]
+        j++
+        } return arrNew
+    }
+</script>
+</body>
+</html>
