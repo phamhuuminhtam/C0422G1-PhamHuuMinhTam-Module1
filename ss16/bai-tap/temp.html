@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>temp</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(tempC) {
+            this.tempC = tempC
+        }
+        setTempC(newtemp){
+            this.tempC = newtemp
+        }
+        getTempC(){
+            return this.tempC
+        }
+        TranF(){
+            return this.tempC*9/5+32
+        }
+        TranK(){
+            return this.tempC + 273.15
+        }
+    }
+    let tempC = new Temperature(25)
+    document.write(tempC.getTempC() + ' độ C thì bằng ' + tempC.TranF() + " độ F" +"<br>")
+    document.write(tempC.getTempC() + ' độ C thì bằng ' + tempC.TranK() + " độ K")
+</script>
+</body>
+</html>

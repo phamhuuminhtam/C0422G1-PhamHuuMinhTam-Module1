@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let MyDate = function(day, month, year) {
+    //
+    //     this.day = day;
+    //
+    //     this.month = month;
+    //
+    //     this.year = year;
+    //
+    //
+    //     this.getDay = function() {
+    //         return this.day;
+    //     }
+    //     this.getMonth = function() {
+    //         return this.month;
+    //     }
+    //     this.getYear = function() {
+    //         return this.year;
+    //     }
+    //     this.setDay = function(day) {
+    //         this.day  = day;
+    //     }
+    //     this.setMonth = function(month) {
+    //         this.month  = month;
+    //     }
+    //     this.setYear = function(year) {
+    //         this.year  = year;
+    //     }
+    //     this.setDate = function (day,month,year) {
+    //        this.day =day
+    //         this.month = month
+    //         this.year = year
+    //         return document.write(day + '/'+ month + "/" + year)
+    //
+    //     }
+    //
+    // };
+    // let date = new MyDate(2, 2, 2007);
+    //
+    // date.setDay(10);
+    // date.setMonth(10);
+    // date.setYear(2019);
+    // date.setDate(24,05,2022)
+    //
+    //
+    // let day = date.getDay();
+    //
+    // let month = date.getMonth();
+    //
+    // let year = date.getYear();
+    //
+    // alert(day + "/" + month + "/" + year);
+    class MyDate {
+        constructor(day,month,year) {
+            this.day = day
+            this.month = month
+            this.year =year
+        }
+        getDay() {
+            return this.day
+        }
+        setDay(newday) {
+            this.day = newday
+        }
+        getMonth() {
+            return this.month
+        }
+        setMonth(newmonth) {
+            this.month = newmonth
+        }
+        getYear() {
+            return this.year
+        }
+        setYear(newyear) {
+            this.year = newyear
+        }
+        setDate(newday,newmonth,newyear) {
+            this.day = newday
+            this.month= newmonth
+            this.year= newyear
+        }
+        getDate() {
+            return  (this.day + "/" + this.month + "/"+ this.year)
+        }
+        }
+        let date = new MyDate(2,2,2022)
+    date.setDay(15)
+    date.setYear(2023)
+    document.write(date.getDate() + "<br>")
+    date.setDate(25,10,2023)
+    document.write(date.getDate())
+</script>
+</body>
+</html>

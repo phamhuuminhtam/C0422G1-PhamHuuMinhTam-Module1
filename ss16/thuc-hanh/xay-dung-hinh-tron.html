@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let circle = function (radius) {
+    //     this.radius = radius
+    //     this.getRadius= function () {
+    //     return radius
+    //     }
+    //     this.getArea = function () {
+    //     return radius * radius * Math.PI
+    //     }
+    // }
+    // let cirCle = new circle(5)
+    // let radius= cirCle.getRadius()
+    // let area = cirCle.getArea()
+    // alert("radius:" + radius + " Area: " + area)
+    class circle {
+        constructor(radius) {
+            this.radius = radius
+        }
+        getRadius() {
+            return this.radius
+        }
+        setRadius (newradius) {
+            this.radius = newradius
+        }
+        getArea() {
+            return this.radius * this.radius * Math.PI
+        }
+    }
+
+    let circle1 = new circle(10)
+
+    alert("bán kính : " + circle1.getRadius() + " và diện tích là " + circle1.getArea() )
+</script>
+</body>
+</html>
