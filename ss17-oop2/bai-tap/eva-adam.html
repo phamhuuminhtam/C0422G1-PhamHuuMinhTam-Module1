@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eva-adam</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+        this.weight = weight
+        }
+        getweight(){
+            return this.weight
+        }
+        setWeight(newweight){
+            this.weight = newweight
+        }
+        isEmty(){
+            if ( this.weight <=0){
+                return true
+            }else return  false
+        }
+        decreaseApple(){
+            if (this.isEmty()){
+                alert("Đã ăn hết táo")
+            }else {this.weight = this.weight-1}
+        }
+   }
+   class Human{
+        constructor(name,gender,weight) {
+            this.name= name
+            this.gender = gender
+            this.weight= weight
+        }
+        isMale() {
+            if (this.gender== 1) {
+                return true
+            } else {
+                return false
+            }
+        }
+        getGender(){
+                if (this.isMale()) {
+                    return 'Male'
+                } else return 'Female'
+            }
+         getName(){
+            return this.name
+         }
+         setName (newname){
+            this.name = newname
+         }
+         getWeight(){
+            return this.weight
+         }
+         setWeight(newweight){
+            this.weight= newweight
+         }
+        say(str){
+            return console.log(str)
+         }
+         checkApple(apple){
+           return apple.isEmty()
+         }
+        eat(apple){
+            if (apple.getweight()>0){
+                apple.decreaseApple()
+                this.weight++
+                document.write(this.name + " ăn táo"+"<br>")
+            }else document.write("hết táo rồi" + "<br>")
+        }
+        getInfo(){
+            return ("tên " + this.name +" giới tính " + this.gender + " cân nặng " + this.weight )
+        }
+ }
+let apple = new Apple(10)
+    let adam1 = new Human('Adam',1,50)
+    let eva1 = new Human('Eva',0,45)
+    document.write(eva1.getGender()+"<br>")
+    document.write(eva1.getInfo() + "<br>")
+    while (apple.isEmty()==false){
+        eva1.eat(apple)
+        adam1.eat(apple)
+        adam1.eat(apple)
+        document.write("quả táo còn :" + apple.getweight() +"<br>")
+        document.write("cân nặng adam : " +adam1.getWeight()+"<br>")
+        document.write("cân nặng eva : " +eva1.getWeight()+"<br>"+"<br>")
+    }
+
+</script>
+</body>
+</html>
