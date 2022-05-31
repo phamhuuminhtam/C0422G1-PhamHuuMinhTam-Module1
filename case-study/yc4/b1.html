@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let str = prompt("nhập chuỗi")
+        let str1= str.trim()
+        arr = str1.toLowerCase().split(" ");
+        console.log(arr)
+        for (let i=0; i<arr.length; i++){
+            arr[i]= arr[i].charAt(0).toUpperCase() + arr[i].slice(1)
+        }
+        let a = arr.join(' ')
+    document.write(a)
+    // viết tắt
+    // let str = prompt("nhập chuỗi")
+    // let str1= str.trim()
+    // arr = str1.toLowerCase().split(" ");
+    // console.log(arr)
+    // if (arr.length ==1) {
+    //     document.write("không cần viết tắt")
+    // }else {
+    // for (let i=0; i<arr.length; i++){
+    //     arr[i]= arr[i].charAt(0).toUpperCase()
+    // }
+    // let a = arr.join('')
+    // document.write(a)}
+    </script>
+</body>
+</html>

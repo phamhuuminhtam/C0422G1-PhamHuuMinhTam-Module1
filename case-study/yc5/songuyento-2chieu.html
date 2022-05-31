@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log(primeTest(4))
+    let m = prompt("nhập chiều rộng của mảng")
+    let n = prompt("nhập chiều dài của mảng")
+    document.write("số lượng số nguyên tố trong mảng là " + checkPrime(m,n))
+    function checkPrime(m,n){
+        let arr=[]
+        let count =0
+        for (let i =0; i<m; i++){
+            arr[i] = new Array()
+            for (let j=0; j<n;j++){
+                arr[i][j]= +prompt("nhập phần tử")
+                if (primeTest(arr[i][j])){
+                    document.write(arr[i][j] + "<br>")
+                    count++
+                }
+            }
+        }
+        return (count)
+    }
+    function primeTest(a) {
+        if (a<2) {
+            return false
+        }
+        for (let i =2; i < a; i++){
+            if (a %i === 0){
+                return false
+            }
+        }return  true
+    }
+
+</script>
+</body>
+</html>

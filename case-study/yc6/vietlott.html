@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng mua vé sổ số VIETLOT</title>
+    <style>
+        tr,td {
+            width: 50px;
+            text-align: center;
+            height: 50px;
+            font-weight: bolder;
+        }
+        button {
+            height: 50px;
+            width: 100px;
+            background-color: greenyellow;
+            border-radius: 10px;
+        }
+        table button{
+            height: 50px;
+            width: 50px;
+            background-color: greenyellow;
+            border-radius: 50px;
+        }
+        table{
+            background-color: ghostwhite;
+            border-collapse: collapse;
+        }
+
+    </style>
+</head>
+<body background="https://s.memehay.com/files/posts/20210507/giang-ho-tien-bip-noi-con-cai-nit.jpeg">
+<center>
+    <h1>XỔ SỐ VIETLOT</h1>
+
+    <div id="display"></div>
+    <button  onclick="creat()">Mua vé</button>
+    <button  onclick="soSanh()">Xem kết quả</button>
+    <div id="view"></div>
+</center>
+<script>
+    // let a
+    // a = Math.floor(Math.random()*100+1);
+    // console.log(a)
+    let arr= []
+    class choseNumber{
+        constructor(a,b,c,d,e,f) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+            this.d = d;
+            this.e = e;
+            this.f = f;
+        }
+
+        geta() {
+            return this.a;
+        }
+
+        seta(value) {
+            this.a = value;
+        }
+
+        getb() {
+            return this.b;
+        }
+
+        setb(value) {
+            this.b = value;
+        }
+
+        getc() {
+            return this.c;
+        }
+
+        setc(value) {
+            this.c = value;
+        }
+
+        getd() {
+            return this.d;
+        }
+
+        setd(value) {
+            this.d = value;
+        }
+
+        gete() {
+            return this.e;
+        }
+
+        sete(value) {
+            this.e = value;
+        }
+
+        getf() {
+            return this.f;
+        }
+
+        setf(value) {
+            this.f = value;
+        }
+    }
+    // let xoSo = new choseNumber(12,45,26,58,64,87);
+    let xoSo =new choseNumber(Math.floor(Math.random()*101),
+        Math.floor(Math.random()*100),
+        Math.floor(Math.random()*100),
+        Math.floor(Math.random()*100),
+        Math.floor(Math.random()*100),
+        Math.floor(Math.random()*100),
+    )
+    function getNewResult(){
+        xoSo.seta(Math.floor(Math.random()*100))
+        xoSo.setb(Math.floor(Math.random()*100))
+        xoSo.setc(Math.floor(Math.random()*100))
+        xoSo.setd(Math.floor(Math.random()*100))
+        xoSo.sete(Math.floor(Math.random()*100))
+        xoSo.setf(Math.floor(Math.random()*100))
+    }
+    function ketQua() {
+        let str= "<table style='background-color: lightblue; width: 400px' border='0px'>\n"
+        str+="<tr>"+
+            "<td colspan='6'style='font-size: 40pt'>Kết quả là</td>"+
+            "</tr>"+
+            "<tr>"+
+            "<td>" +"<button>"+xoSo.geta()+"</button>" +"</td>"+
+            "<td>" +"<button>"+xoSo.getb()+"</button>" +"</td>"+
+            "<td>" +"<button>"+xoSo.getc()+"</button>" +"</td>"+
+            "<td>" +"<button>"+xoSo.getd()+"</button>" +"</td>"+
+            "<td>" +"<button>"+xoSo.gete()+"</button>" +"</td>"+
+            "<td>" +"<button>"+xoSo.getf()+"</button>" +"</td>"+
+                        "</tr>";
+        str +="</table>";
+        document.getElementById("view").innerHTML=str
+    }
+    function soSanh() {
+        getNewResult()
+        for (let i=0;i<arr.length;i++){
+            if (arr[i].geta()===xoSo.geta()  && arr[i].getb()===xoSo.getb() && arr[i].getc()===xoSo.getc() && arr[i].getd()===xoSo.getd() && arr[i].gete()===xoSo.gete() && arr[i].getf()===xoSo.getf()){
+                alert('chúc mừng trúng giải 1 của vé thứ '+(i+1))
+            }else
+            if (arr[i].getb()===xoSo.getb() && arr[i].getc()===xoSo.getc() && arr[i].getd()===xoSo.getd() && arr[i].gete()===xoSo.gete() && arr[i].getf()===xoSo.getf()){
+                alert('chúc mừng trúng giải 2 của vé thứ '+(i+1))
+            }else
+            if (arr[i].getd()===xoSo.getd() && arr[i].gete()===xoSo.gete() && arr[i].getf()===xoSo.getf()){
+                alert('chúc mừng trúng giải 3 của vé thứ '+(i+1))
+            }else {
+                alert('Vé thứ '+(i+1)+' chúc bạn may mắn lần sau!')
+            }
+        }
+        display(arr)
+        ketQua()
+    }
+    function creat() {
+        let tb = prompt('Bạn có 2 Lụa chọn \n ' +
+            '1. Bạn muốn tự chọn số.\n ' +
+            '2. Hệ thống tự random')
+        if (tb=='1'){
+            let a =+prompt('dự đoán số 1: ')
+            let b =+prompt('dự đoán số 2: ')
+            let c =+prompt('dự đoán số 3: ')
+            let d =+prompt('dự đoán số 4: ')
+            let e =+prompt('dự đoán số 5: ')
+            let f =+prompt('dự đoán số 6: ')
+            let dudoan = new choseNumber(a,b,c,d,e,f)
+            arr.push(dudoan);
+            display(arr);
+        }else if (tb=='2'){
+            let a=Math.floor(Math.random()*100)
+            let b=Math.floor(Math.random()*100)
+            let c=Math.floor(Math.random()*100)
+            let d=Math.floor(Math.random()*100)
+            let e=Math.floor(Math.random()*100)
+            let f=Math.floor(Math.random()*100)
+            let dudoan = new choseNumber(a,b,c,d,e,f)
+            arr.push(dudoan);
+            display(arr);
+        }
+    }
+    display(arr);
+    function display(arr) {
+        let str= "<table border='0px'>\n"
+        for (let i=0;i<arr.length;i++){
+            str+="<tr>"+
+                "<td>" +"<button onclick='editA("+ i +")'>"+arr[i].geta()+"</button>" +"</td>"+
+                "<td>" +"<button onclick='editB("+ i +")'>"+arr[i].getb()+"</button>" +"</td>"+
+                "<td>" +"<button onclick='editC("+ i +")'>"+arr[i].getc()+"</button>" +"</td>"+
+                "<td>" +"<button onclick='editD("+ i +")'>"+arr[i].getd()+"</button>" +"</td>"+
+                "<td>" +"<button onclick='editE("+ i +")'>"+arr[i].gete()+"</button>" +"</td>"+
+                "<td>" +"<button onclick='editF("+ i +")'>"+arr[i].getf()+"</button>" +"</td>"+
+                // "<td>" +"<button onclick='edit("+i+")'>edit</button>"+"</td>"+
+                "<td>" +"<button style='background-color: red; color: white' onclick='remove("+i+")'>delete</button>"+"</td>"+
+                "</tr>";
+        }
+        str +="</table>";
+        document.getElementById("display").innerHTML=str
+    }
+    // function editA(value) {
+    //     let a =+prompt('dự đoán số 1: ')
+    //
+    //     let c =+prompt('dự đoán số 3: ')
+    //     let d =+prompt('dự đoán số 4: ')
+    //     let e =+prompt('dự đoán số 5: ')
+    //     let f =+prompt('dự đoán số 6: ')
+    //     arr[value].seta(a)
+    //
+    //     arr[value].setc(c)
+    //     arr[value].setd(d)
+    //     arr[value].sete(e)
+    //     arr[value].setf(f)
+    //     display(arr);
+    // }
+    function editA(value) {
+        let a =+prompt('dự đoán số 1: ')
+        arr[value].seta(a)
+        display(arr);
+    }
+    function editB(value) {
+        let b =+prompt('dự đoán số 2: ')
+        arr[value].setb(b)
+        display(arr);
+    }
+    function editC(value) {
+        let c =+prompt('dự đoán số 3: ')
+        arr[value].setc(c)
+        display(arr);
+    }
+    function editD(value) {
+        let d =+prompt('dự đoán số 4: ')
+        arr[value].setd(d)
+        display(arr);
+    }
+    function editE(value) {
+        let e =+prompt('dự đoán số 5: ')
+        arr[value].sete(e)
+        display(arr);
+    }
+    function editF(value) {
+        let f =+prompt('dự đoán số 6 ')
+        arr[value].setf(f)
+        display(arr);
+    }
+    function remove(value) {
+        arr.splice(value,1);
+        display(arr)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+header {
+    width: auto;
+    height: 100px;
+    background: deepskyblue;
+    margin: 0px  auto;
+
+}
+header img {
+    padding-left: 20px;
+    margin: 10px 10px;
+    float: left;
+}
+header h1 {
+    float: left;
+    line-height: 100px;
+    margin-left:450px;
+    color: darkblue;
+    font-weight: bolder;
+    }
+#mainleft{
+    height: 1000px;
+    width: 300px;
+    background: palegreen;
+    float: left;
+    border: 3px solid black;
+
+}
+#mainleft select option {
+    float: left;
+    margin: 50px 50px;
+
+}
+#mainleft div {
+    margin-top: 70px;
+    margin-left: 40px;
+
+}
+#mainright {
+    background: dodgerblue;
+    height: 1000px;
+    width: auto;
+    border: 3px solid black;
+}
+select {
+    height: 50px;
+    width: 200px;
+    border-radius: 20px;
+}

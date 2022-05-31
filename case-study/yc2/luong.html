@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lương</title>
+</head>
+<body>
+<script>
+    let s = prompt("nhập lương của bạn");
+    document.write("lương của bạn là: " + s + "<br>");
+    (s >= 15000000) ? document.write("thuế bạn phải đóng: " + s* 0.2 + ", lương ròng: " + s*0.8):
+        (s >= 7000000) ? document.write("thuế bạn phải đóng: " + s* 0.1 + ", lương ròng: " + s*0.9):
+           document.write("thuế bạn phải đóng: " + s*0.05 + ", lương ròng: " + s*0.95);
+</script>
+</body>
+</html>

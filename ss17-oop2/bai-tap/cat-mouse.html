@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mèo và chuột</title>
+</head>
+<body>
+<script>
+    class Rat {
+        constructor(name, weight, speed, life) {
+            this.name = name
+            this.weight = weight
+            this.speed = speed
+            this.life = life
+
+        }
+
+        getLife() {
+            return this.life
+        }
+
+        setLife(newlife) {
+            this.life = newlife
+        }
+
+        sound() {
+            document.write(this.name + " sound: Chit chit")
+        }
+    }
+
+    class Cat {
+        constructor(name, weight, speed, count,mousename) {
+            this.name = name
+            this.weight = weight
+            this.speed = speed
+            this.count = count
+            this.mousename = mousename
+        }
+
+        getWeight() {
+            return this.weight
+        }
+
+        setWeight(newweight) {
+            this.weight = newweight
+        }
+
+        getSpeed() {
+            return this.speed
+        }
+
+        setSpeed(newSpeed) {
+            this.speed = newSpeed
+        }
+
+        // setCount(newcount){
+        //     this.count= newcount
+        // }
+        getCount() {
+            return this.count
+        }
+        thaMouse(){
+            this.count=0
+            this.mousename =""
+        }
+        catchMouse(mouse) {
+
+            if (this.speed > mouse.speed && this.count < 1) {
+                this.count++
+                this.mousename = mouse.name
+                return true
+            } else {
+                return false
+            }
+        }
+
+        eat(mouse) {
+            if (this.count === 1) {
+                if (this.mousename === mouse.name) {
+                    if (mouse.getLife() === true) {
+                         this.count--;
+                        this.weight = this.weight + mouse.weight;
+                        mouse.setLife(false);
+                        document.write("phê"+"<br>");
+                    } else document.write("chuột chết rồi, chê!!!"+"<br>")
+                } else document.write("đã bắt được " + mouse.name + " đâu mà ăn!" +"<br>")
+            } else document.write("đã bắt được gì đâu mà ăn!"+"<br>")
+        }
+    }
+
+    let mickey = new Rat("mickey", 3, 3, false)
+    let donal = new Rat("donal", 3, 3, true)
+    let tom = new Cat("Tom", 10, 5, 0)
+    console.log(tom.catchMouse(mickey))
+    console.log(tom.getCount())
+    tom.thaMouse()
+    console.log(tom.getCount())
+    console.log(tom.catchMouse(donal))
+    console.log(tom.getCount())
+    tom.eat(mickey)
+    console.log(mickey.getLife())
+    tom.eat(donal)
+    console.log(donal.getLife())
+
+</script>
+</body>
+</html>

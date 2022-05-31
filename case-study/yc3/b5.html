@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>menu ['1 cafe' giá 10000, '2 cam vắt' giá 15000, '3 ép cà rốt' giá 20000,'4 ép cà chua' giá 20000, '5 nước lọc' giá 25000, '6 nước dừa' giá 25000 ] </p>
+<button type="button" onclick="chooseDrink()">Chọn món</button>
+<script>
+    function chooseDrink() {
+        var menu = ['cafe', 'cam vắt', 'ép cà rốt', 'ép cà chua', 'nước lọc', 'nước dừa'];
+        var num = ['1', '2', '3', '4', '5', '6'];
+        var price = [10000, 15000, 20000, 20000, 25000, 25000];
+        var sum = 0;
+        do {
+            var choose = prompt("nhập số gọi món")
+            if (choose == 7) {
+                break;
+            }
+            var q = +prompt("nhập số lượng");
+            sum += price[num.indexOf(choose)] * q
+            document.write("bạn gọi món " + menu[num.indexOf(choose)] + " số lượng " + q + "<br>")
+        } while (choose != 7)
+        document.write("tổng tiền là " + sum)
+    }
+</script>
+
+</body>
+</html>
