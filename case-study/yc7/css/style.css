@@ -1,52 +1,64 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
-header {
-    width: auto;
+
+#header {
+    width: 2000px;
     height: 100px;
     background: deepskyblue;
-    margin: 0px  auto;
+    margin: 0px auto;
 
 }
-header img {
-    padding-left: 20px;
+
+#header img {
     margin: 10px 10px;
     float: left;
 }
-header h1 {
-    float: left;
+
+#header h1 {
+    display: flex;
+    justify-content: center;
     line-height: 100px;
-    margin-left:450px;
+    /*margin-left:450px;*/
     color: darkblue;
     font-weight: bolder;
-    }
-#mainleft{
+}
+
+#mainleft {
     height: 1000px;
     width: 300px;
     background: palegreen;
     float: left;
-    border: 3px solid black;
-
+    border: 1px solid black;
+    margin: 0px auto;
 }
+
 #mainleft select option {
     float: left;
     margin: 50px 50px;
 
 }
+
 #mainleft div {
     margin-top: 70px;
     margin-left: 40px;
 
+
 }
+
 #mainright {
+
     background: dodgerblue;
     height: 1000px;
-    width: auto;
-    border: 3px solid black;
+    width: 1599px;
+    border: 1px solid black;
+    float: left;
+
 }
+
 select {
     height: 50px;
     width: 200px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
