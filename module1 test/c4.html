@@ -2,9 +2,125 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th {
+            background-color: blue;
+            color: white;
+        }
+        td {
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
-$END$
+<h3 align="center">Quản lý nhân công</h3>
+<div id='result'></div>
+<script>
+    class CongNhan {
+        constructor(stt, hovaten, ngaysinh, diachi, luong, chucvu) {
+            this.stt = stt;
+            this.hovaten = hovaten;
+            this.ngaysinh = ngaysinh;
+            this.diachi = diachi;
+            this.luong = luong;
+            this.chucvu = chucvu
+        }
+
+        getStt() {
+            return this.stt;
+        }
+
+        setStt(value) {
+            this.stt = value;
+        }
+
+        getHovaten() {
+            return this.hovaten;
+        }
+
+        setHovaten(value) {
+            this.hovaten = value;
+        }
+
+        getNgaysinh() {
+            return this.ngaysinh;
+        }
+
+        setNgaysinh(value) {
+            this.ngaysinh = value;
+        }
+
+        getDiachi() {
+            return this.diachi;
+        }
+
+        setDiachi(value) {
+            this.diachi = value;
+        }
+
+        getLuong() {
+            return this.luong;
+        }
+
+        setLuong(value) {
+            this.luong = value;
+        }
+
+        getChucvu() {
+            return this.chucvu;
+        }
+
+        setChucvu(value) {
+            this.chucvu = value;
+        }
+    }
+
+    let truongTanA = new CongNhan(1, "Trương Tấn B", 11 - 11 - 1997, "Quảng Nam", 2000, "Abc")
+    let truongTanB = new CongNhan(2, "Trương Tấn A", 11 - 11 - 1998, "Đà Nẵng", 2000, "Abc")
+    let truongTanC = new CongNhan(3, "Trương Tấn C", 11 - 11 - 1998, "Huế", 2000, "Abc")
+    let arr = []
+    arr.push(truongTanA.getHovaten())
+    arr.push(truongTanB.getHovaten())
+    arr.push(truongTanC.getHovaten())
+    arr.sort()
+
+
+    let arr1 = []
+    arr1.push(truongTanA)
+    arr1.push(truongTanB)
+    arr1.push(truongTanC)
+    let arr2 = []
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr1.length; j++) {
+            if (arr[i] == arr1[j].getHovaten()) {
+                arr2.push(arr1[j])
+            }
+        }
+    }
+    for (let k=0; k<arr2.length;k++){
+        arr2[k].setStt(k+1)
+    }
+    display()
+
+    function display() {
+        var bang = '<table border="1" align="center">'
+        bang = bang + "<tr>" + "<th>STT</th>" + "<th>Họ và tên</th>" + "<th>Địa chỉ</th>" + "<th>Lương</th>" + "<th>Chức vụ</th>"
+        for (let i = 0; i < arr2.length; i++) {
+            bang = bang + '<tr>'
+                + '<td>' + arr2[i].getStt() + "</td>"
+                + '<td>' + arr2[i].getHovaten() + "</td>"
+                + '<td>' + arr2[i].getDiachi() + "</td>"
+                + '<td>' + arr2[i].getLuong() + "</td>"
+                + '<td>' + arr2[i].getChucvu() + "</td>"
+        }
+        bang = bang + '</tr>' + "</table>"
+        document.getElementById("result").innerHTML = bang
+    }
+
+</script>
 </body>
 </html>

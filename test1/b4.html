@@ -2,9 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<button onclick="createAccount(arr)">Tạo tài khoản</button>
+<div id="result"></div>
+<script>
+    class BankingAccount {
+        constructor(accountnumber, accountname, bankname, money) {
+            this.accountnumber = accountnumber;
+            this.accountname = accountname;
+            this.bankname = bankname;
+            this.money = money;
+        }
+
+        getAccountnumber() {
+            return this.accountnumber;
+        }
+
+        setAccountnumber(value) {
+            this.accountnumber = value;
+        }
+
+        getAccountname() {
+            return this.accountname;
+        }
+
+        setAccountname(value) {
+            this.accountname = value;
+        }
+
+        getBankname() {
+            return this.bankname;
+        }
+
+        setBankname(value) {
+            this.bankname = value;
+        }
+
+        getMoney() {
+            return this.money;
+        }
+
+        setMoney(value) {
+            this.money = value;
+        }
+
+    }
+    let arr= []
+    function createAccount(arr) {
+        var accountnumber
+        do {
+             accountnumber= prompt("nhập số tài khoản có 5 số")
+        } while (accountnumber.length != 5 || isNaN(accountnumber)==true)
+
+        let accountname = prompt("nhập tên chủ tài khoản")
+        let bankname = prompt("nhập tên ngân hàng")
+        let money = prompt("nhập số tiền trong tài khoản")
+        let account = new BankingAccount(accountnumber,accountname,bankname,money)
+        arr.push(account)
+        console.log(arr)
+        display(arr)
+    }
+    function display(arr) {
+        var sout="<table border='1'> <tr> " +
+            "<td>Account Number</td>" +
+            "<td>Account Name</td>"+
+            "<td>Bank Name</td>"+
+            "<td>Money</td>"+"</tr>"
+        for (let i=0; i<arr.length; i++){
+            sout += "<tr>"
+                 + "<td>"+ arr[i].getAccountnumber()+"</td>"
+                 + "<td>"+ arr[i].getAccountname()+"</td>"
+                 + "<td>"+ arr[i].getBankname()+"</td>"
+                 + "<td>"+ arr[i].getMoney()+"</td>"
+        }
+        sout+= "</tr> </table>"
+        document.getElementById("result").innerHTML= sout
+    }
+</script>
 </body>
 </html>

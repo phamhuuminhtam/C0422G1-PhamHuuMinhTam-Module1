@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let a
+    do {
+        a = prompt("nhập số phần tử của mảng")
+    } while (a > 50 || a < 0)
+
+    console.log(a)
+    let arr = []
+    for (let i = 0; i < a; i++) {
+        arr[i] = +prompt("nhập số nguyên thứ " + (i + 1))
+    }
+    document.write("mảng vừa nhập vào là: ["+ arr+"]" + "<br>")
+    let sum = 0
+    let count = 0
+    for (let j = 0; j < arr.length; j++) {
+        if (arr[j] % 3 === 0) {
+            sum += arr[j]
+            count++
+        }
+    }
+    document.write("trung bình cộng các số có trong mảng chia hết cho 3 là :" + sum / count + "<br>")
+</script>
 </body>
 </html>

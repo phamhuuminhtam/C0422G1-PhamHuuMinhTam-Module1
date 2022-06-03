@@ -2,9 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+
+    let n
+    do {
+        n = prompt("nhập số phần tử trong mảng")
+    } while (isNaN(n) == true)
+    let arr = []
+    let arrS = []
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("nhập phần tử thứ " + (i + 1))
+    }
+    document.write("chuỗi fibo có trong mảng là :" +findFibo(arr))
+
+    function findFibo(arr){
+    arr.sort((a,b)=>{
+        return a-b;
+    })
+    document.write("mảng nhập vào là: "+ arr + "<br>")
+    document.write("chuỗi fibo là: " + listFibo(arr[arr.length-1]) +"<br>")
+
+    for (let i= 0; i<arr.length;i++){
+        if (listFibo(arr[arr.length-1]).includes(arr[i])){
+            arrS.push(arr[i])
+        }
+    }
+    return arrS
+    }
+
+    function listFibo(n) {
+    let a1=0
+    let a2=1
+    let sum=0
+    let arrF=[]
+        while (sum<=n){
+        sum=a1+a2
+        arrF.push(a2)
+        a1=a2
+        a2=sum
+        }
+     return arrF
+     }
+
+</script>
 </body>
 </html>

@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let number
+    do {
+        number = prompt("nhập vào số nguyên dương cần kiểm tra")
+    } while (number < 0 || number % 1 !== 0)
+
+    console.log(kiemTraSoHoanHao(number))
+
+    function kiemTraSoHoanHao(number) {
+        let arr = []
+        let sum = 0
+        for (let i = 1; i < number; i++) {
+            if (number % i === 0) {
+                arr.push(i)
+            }
+        }
+        for (let j = 0; j < arr.length; j++) {
+            sum += arr[j]
+        }
+        if (number == sum) {
+            return true
+        } else return false
+    }
+</script>
 </body>
 </html>

@@ -5,8 +5,7 @@ function display() {
     for (let i=0;i<arr.length;i++){
         bang= bang + '<tr>'
         bang =bang + '<td>' + arr[i] +"</td>"
-        bang =bang + '<td>'+ "<button type='button' onclick='edit("+ i +")'>Edit</button>" +"</td>"
-        bang =bang + '<td>' + "<button type='button'  onclick='deletei("+ i +")'>Delete</button>" +"</td>"
+
 
     }
     bang= bang + '</tr>' +"</table>"

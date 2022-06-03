@@ -2,9 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let date
+    kiemTraSoNgay(date);
+    function kiemTraSoNgay(date) {
+        do {
+            var arr = []
+            var check
+            date = prompt("nhập tháng/ năm cần kiểm tra (MM/yyyy)")
+            arr = date.split("/")
+            if (arr.length !== 2 || arr[0].length !== 2 || arr[1].length !== 4
+                || isNaN(parseInt(arr[0])) == true || isNaN(parseInt(arr[1])) == true
+                || parseInt(arr[0]) > 12 || parseInt(arr[0]) < 1) {
+                check = true
+            } else {
+                check = false
+            }
+        } while (check == true);
+        switch (parseInt(arr[0])) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.write(date + " có 31 ngày");
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.write(date + " có 30 ngày");
+                break;
+            default:
+                // document.write(date + " có 29 hoặc 28 ngày");
+                if (parseInt(arr[1]) % 4 == 0) {
+                    if (parseInt(arr[1]) % 100 == 0) {
+                        if (parseInt(arr[1]) % 400 == 0) {
+                            document.write(date + ' có 29 ngày');
+                        } else {
+                            document.write(date + ' có 28 ngày');
+                        }
+                    } else {
+                        document.write(date + ' có 29 ngày');
+                    }
+                } else {
+                    document.write(date + ' có 28 ngày');
+                }
+
+        }
+    }
+
+
+</script>
 </body>
 </html>

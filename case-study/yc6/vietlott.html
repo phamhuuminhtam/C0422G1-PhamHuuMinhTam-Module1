@@ -29,14 +29,17 @@
 
     </style>
 </head>
-<body background="https://s.memehay.com/files/posts/20210507/giang-ho-tien-bip-noi-con-cai-nit.jpeg">
+<body>
 <center>
     <h1>XỔ SỐ VIETLOT</h1>
 
     <div id="display"></div>
     <button  onclick="creat()">Mua vé</button>
     <button  onclick="soSanh()">Xem kết quả</button>
+    <button  onclick="reset()">Bắt đầu lại</button>
     <div id="view"></div>
+    <br>
+    <div id="result"></div>
 </center>
 <script>
     // let a
@@ -103,24 +106,30 @@
     }
     // let xoSo = new choseNumber(12,45,26,58,64,87);
     let xoSo =new choseNumber(Math.floor(Math.random()*101),
-        Math.floor(Math.random()*100),
-        Math.floor(Math.random()*100),
-        Math.floor(Math.random()*100),
-        Math.floor(Math.random()*100),
-        Math.floor(Math.random()*100),
+        Math.floor(Math.random()*10),
+        Math.floor(Math.random()*10),
+        Math.floor(Math.random()*10),
+        Math.floor(Math.random()*10),
+        Math.floor(Math.random()*10),
     )
+    function reset() {
+        arr=[]
+        display(arr)
+        soSanh()
+        document.getElementById("view").innerText=""
+    }
     function getNewResult(){
-        xoSo.seta(Math.floor(Math.random()*100))
-        xoSo.setb(Math.floor(Math.random()*100))
-        xoSo.setc(Math.floor(Math.random()*100))
-        xoSo.setd(Math.floor(Math.random()*100))
-        xoSo.sete(Math.floor(Math.random()*100))
-        xoSo.setf(Math.floor(Math.random()*100))
+        xoSo.seta(Math.floor(Math.random()*10))
+        xoSo.setb(Math.floor(Math.random()*10))
+        xoSo.setc(Math.floor(Math.random()*10))
+        xoSo.setd(Math.floor(Math.random()*10))
+        xoSo.sete(Math.floor(Math.random()*10))
+        xoSo.setf(Math.floor(Math.random()*10))
     }
     function ketQua() {
         let str= "<table style='background-color: lightblue; width: 400px' border='0px'>\n"
         str+="<tr>"+
-            "<td colspan='6'style='font-size: 40pt'>Kết quả là</td>"+
+            "<td colspan='6'style='font-size: 40pt'> <hr> Kết quả là</td>"+
             "</tr>"+
             "<tr>"+
             "<td>" +"<button>"+xoSo.geta()+"</button>" +"</td>"+
@@ -135,23 +144,29 @@
     }
     function soSanh() {
         getNewResult()
+        var str="";
         for (let i=0;i<arr.length;i++){
             if (arr[i].geta()===xoSo.geta()  && arr[i].getb()===xoSo.getb() && arr[i].getc()===xoSo.getc() && arr[i].getd()===xoSo.getd() && arr[i].gete()===xoSo.gete() && arr[i].getf()===xoSo.getf()){
-                alert('chúc mừng trúng giải 1 của vé thứ '+(i+1))
+                str += "<button style='width: 300px;background-color: coral'>Vé thứ "+ (i+1)+ ": Chúc mừng bạn trúng giải nhất</button>" +'<br>'
             }else
             if (arr[i].getb()===xoSo.getb() && arr[i].getc()===xoSo.getc() && arr[i].getd()===xoSo.getd() && arr[i].gete()===xoSo.gete() && arr[i].getf()===xoSo.getf()){
-                alert('chúc mừng trúng giải 2 của vé thứ '+(i+1))
+                str += "<button style='width: 300px;background-color: coral'>Vé thứ "+ (i+1)+ ": Bạn trúng giải nhì</button>" +'<br>'
             }else
             if (arr[i].getd()===xoSo.getd() && arr[i].gete()===xoSo.gete() && arr[i].getf()===xoSo.getf()){
-                alert('chúc mừng trúng giải 3 của vé thứ '+(i+1))
+                str+= "<button style='width: 300px;background-color: coral'>Vé thứ "+ (i+1)+ ": Bạn trúng giải khuyến khích</button>" +'<br>'
             }else {
-                alert('Vé thứ '+(i+1)+' chúc bạn may mắn lần sau!')
+                str+= "<button style='width: 300px;background-color: coral'>Vé thứ "+ (i+1)+ ": Chúc bạn may mắn lần sau</button>" + "<br>"
             }
         }
+        document.getElementById("result").innerHTML=str
         display(arr)
         ketQua()
     }
     function creat() {
+        if (arr.length>3){
+           return  alert("bạn đã mua đủ 4 vé")
+        }
+
         let tb = prompt('Bạn có 2 Lụa chọn \n ' +
             '1. Bạn muốn tự chọn số.\n ' +
             '2. Hệ thống tự random')
@@ -166,12 +181,12 @@
             arr.push(dudoan);
             display(arr);
         }else if (tb=='2'){
-            let a=Math.floor(Math.random()*100)
-            let b=Math.floor(Math.random()*100)
-            let c=Math.floor(Math.random()*100)
-            let d=Math.floor(Math.random()*100)
-            let e=Math.floor(Math.random()*100)
-            let f=Math.floor(Math.random()*100)
+            let a=Math.floor(Math.random()*10)
+            let b=Math.floor(Math.random()*10)
+            let c=Math.floor(Math.random()*10)
+            let d=Math.floor(Math.random()*10)
+            let e=Math.floor(Math.random()*10)
+            let f=Math.floor(Math.random()*10)
             let dudoan = new choseNumber(a,b,c,d,e,f)
             arr.push(dudoan);
             display(arr);
@@ -182,6 +197,7 @@
         let str= "<table border='0px'>\n"
         for (let i=0;i<arr.length;i++){
             str+="<tr>"+
+                "<td>" +"<button style='background-color: #fffa08'> vé " +(i+1)+ "</button>" +"</td>"+
                 "<td>" +"<button onclick='editA("+ i +")'>"+arr[i].geta()+"</button>" +"</td>"+
                 "<td>" +"<button onclick='editB("+ i +")'>"+arr[i].getb()+"</button>" +"</td>"+
                 "<td>" +"<button onclick='editC("+ i +")'>"+arr[i].getc()+"</button>" +"</td>"+

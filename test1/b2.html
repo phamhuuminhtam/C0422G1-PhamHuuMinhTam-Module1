@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let str = prompt("nhập chuỗi ký tự")
+    converStr(str)
+    function converStr(str) {
+        let arr = str.trim().split(' ')
+        if (arr.length == 1) {
+            alert("chỉ có 1 từ, không cần viết tắt")
+        } else {
+            for (let i = 0; i < arr.length; i++) {
+                arr[i] = arr[i].charAt(0).toUpperCase()
+            }
+            arr = arr.join('')
+            document.write("từ viết tắt là: " +arr)
+        }
+    }
+</script>
 </body>
 </html>
